@@ -47,20 +47,22 @@
         <language tag="es-ES">language/en-ES/com_base.ini</language>
 	</languages>
 	
-	<!-- <administration>
+	<administration>
 		<files folder="admin">
-			<file>access.xml</file>
+			<!-- <file>access.xml</file>
 			<file>config.xml</file>
 			<folder>forms</folder>
 			<folder>services</folder>
 			<folder>sql</folder>
 			<folder>src</folder>
-			<folder>tmpl</folder>
+			<folder>tmpl</folder> -->
 		</files>
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/com_base.ini</language>
 			<language tag="en-GB">language/en-GB/com_base.sys.ini</language>
+            <language tag="es-ES">language/es-ES/com_base.ini</language>
+			<language tag="es-ES">language/es-ES/com_base.sys.ini</language>
 		</languages>
 		<menu img="class:default" link="option=com_base">com_base</menu>
-	</administration> -->
+	</administration>
 </extension>
