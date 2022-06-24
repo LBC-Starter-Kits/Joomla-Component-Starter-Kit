@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="component" method="upgrade">
-	<name>com_base</name>
+	<name>com_basecomponent</name>
 	
 	<creationDate>06/24/2022</creationDate>
 	<author>Luis BC</author>
@@ -45,8 +45,8 @@
 	</files>
 	
 	<languages folder="site">
-		<language tag="en-GB">language/en-GB/com_base.ini</language>
-        <language tag="es-ES">language/es-ES/com_base.ini</language>
+		<language tag="en-GB">language/en-GB/com_basecomponent.ini</language>
+        <language tag="es-ES">language/es-ES/com_basecomponent.ini</language>
 	</languages>
 	
 	<administration>
@@ -60,11 +60,11 @@
 			<folder>tmpl</folder>
 		</files>
 		<languages folder="admin">
-			<language tag="en-GB">language/en-GB/com_base.ini</language>
-			<language tag="en-GB">language/en-GB/com_base.sys.ini</language>
-            <language tag="es-ES">language/es-ES/com_base.ini</language>
-			<language tag="es-ES">language/es-ES/com_base.sys.ini</language>
+			<language tag="en-GB">language/en-GB/com_basecomponent.ini</language>
+			<language tag="en-GB">language/en-GB/com_basecomponent.sys.ini</language>
+            <language tag="es-ES">language/es-ES/com_basecomponent.ini</language>
+			<language tag="es-ES">language/es-ES/com_basecomponent.sys.ini</language>
 		</languages>
-		<menu img="class:default" link="option=com_base">LBC Base Component</menu>
+		<menu img="class:default" link="option=com_basecomponent">LBC Base Component</menu>
 	</administration>
 </extension>
