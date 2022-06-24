@@ -49,12 +49,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [                
-                { from: path.resolve(__dirname,"src"), to: "." },
-                // { from: path.resolve(__dirname,"src","tmpl"), to: "tmpl" },
-                // { from: path.resolve(__dirname,"vendor"), to: "vendor" },
-                // { from: "./src/index.html", to: "index.html" },
-                // { from: "./src/helper.php", to: "helper.php" },
-                // { from: "./src/mod_modBase.php", to: "mod_modBase.php" },
+                { from: path.resolve(__dirname,"src","site"), to: "site" },
+                { from: path.resolve(__dirname,"src","admin"), to: "admin" },
                 { from: "./src/com_base.xml", to: "com_base.xml" },                
             ],
         }),

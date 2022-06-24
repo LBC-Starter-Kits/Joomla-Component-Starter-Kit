@@ -19,7 +19,7 @@
 
         The namespace attribute, path="src", indicates that all of the files containing namespaced code will be found in the src directory.
     -->
-	<namespace path="src">LBC\Component\Base</namespace>
+	<namespace path="src">LBC\Component\BaseComponent</namespace>
 
 	<install> <!-- Runs on install -->
 		<sql>
@@ -49,13 +49,13 @@
 	
 	<administration>
 		<files folder="admin">
-			<!-- <file>access.xml</file>
+			<file>access.xml</file>
 			<file>config.xml</file>
 			<folder>forms</folder>
 			<folder>services</folder>
 			<folder>sql</folder>
 			<folder>src</folder>
-			<folder>tmpl</folder> -->
+			<folder>tmpl</folder>
 		</files>
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/com_base.ini</language>
