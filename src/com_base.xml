@@ -44,7 +44,7 @@
 	
 	<languages folder="site">
 		<language tag="en-GB">language/en-GB/com_base.ini</language>
-        <language tag="es-ES">language/en-ES/com_base.ini</language>
+        <language tag="es-ES">language/es-ES/com_base.ini</language>
 	</languages>
 	
 	<administration>
