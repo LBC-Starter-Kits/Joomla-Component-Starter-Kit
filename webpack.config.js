@@ -51,7 +51,8 @@ module.exports = {
             patterns: [                
                 { from: path.resolve(__dirname,"src","site"), to: "site" },
                 { from: path.resolve(__dirname,"src","admin"), to: "admin" },
-                { from: "./src/com_base.xml", to: "com_base.xml" },                
+                { from: "./src/com_base.xml", to: "com_base.xml" },
+                { from: "./src/com_base.xml", to: "admin/com_base.xml" },                  
             ],
         }),
         new ZipPlugin({

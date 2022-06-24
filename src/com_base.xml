@@ -21,11 +21,13 @@
     -->
 	<namespace path="src">LBC\Component\BaseComponent</namespace>
 
-	<install> <!-- Runs on install -->
+	<!-- Runs on install -->
+	<!-- Bug: El script no se ejecuta en la instalación, ejecutar manualmente-->
+	<!-- <install> 
 		<sql>
 			<file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
 		</sql>
-	</install>
+	</install> -->
 	<uninstall> <!-- Runs on uninstall -->
 		<sql>
 			<file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
@@ -63,6 +65,6 @@
             <language tag="es-ES">language/es-ES/com_base.ini</language>
 			<language tag="es-ES">language/es-ES/com_base.sys.ini</language>
 		</languages>
-		<menu img="class:default" link="option=com_base">com_base</menu>
+		<menu img="class:default" link="option=com_base">LBC Base Component</menu>
 	</administration>
 </extension>
