@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" method="upgrade">
+	<name>com_base</name>
+	
+	<creationDate>06/24/2022</creationDate>
+	<author>Luis BC</author>
+	<authorEmail>luinux81@gmail.com</authorEmail>
+
+	<!--  The version string is recorded in the components table -->
+	<version>0.0.1</version>
+
+	<!-- The description is optional and defaults to the name -->
+	<description>COM_BASE_XML_DESCRIPTION</description>
+
+    <!-- 
+        The first item should be the Company name. The namespace is used in the extension to distinguish its code from code in other extensions that may have identical class names. The namespace is used to register a service provider.
+
+        The second item is the type of extension: Component, Module, Plugin or Template. The third item is the extension name without preceding com_, mod_, etc., Mywalks in this case.
+
+        The namespace attribute, path="src", indicates that all of the files containing namespaced code will be found in the src directory.
+    -->
+	<namespace path="src">LBC\Component\Base</namespace>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+
+	<files folder="site">
+		<folder>src</folder>
+		<folder>tmpl</folder> <!-- Views -->
+	</files>
+	
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/com_base.ini</language>
+        <language tag="es-ES">language/en-ES/com_base.ini</language>
+	</languages>
+	
+	<!-- <administration>
+		<files folder="admin">
+			<file>access.xml</file>
+			<file>config.xml</file>
+			<folder>forms</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/com_base.ini</language>
+			<language tag="en-GB">language/en-GB/com_base.sys.ini</language>
+		</languages>
+		<menu img="class:default" link="option=com_base">com_base</menu>
+	</administration> -->
+</extension>
