@@ -49,7 +49,7 @@ class BaseItemListModel extends ListModel
 				'field_1', 'a.field_1',
 				'field_2', 'a.field_2',
 				'field_3', 'a.field_3',
-				// 'state', 'a.state',
+				'state', 'a.state',
 			);
 		}
 
@@ -112,21 +112,21 @@ class BaseItemListModel extends ListModel
 	 *
 	 * @since   1.6
 	 */
+/*
+    This where you need to know about sql! You need to be able to write queries and debug them. To start we need a database object in the $db variable and a database query object in $query. Passing true to $db->getQuery(true) returns a new object. If true is omitted an existing query is returned that is already populated, usually resulting in disaster. In Joomla, parts of a query can be chained together, which tends to make for tricky understanding. So here the parts are assembled separately.
 
-//     This where you need to know about sql! You need to be able to write queries and debug them. To start we need a database object in the $db variable and a database query object in $query. Passing true to $db->getQuery(true) returns a new object. If true is omitted an existing query is returned that is already populated, usually resulting in disaster. In Joomla, parts of a query can be chained together, which tends to make for tricky understanding. So here the parts are assembled separately.
+	The 'select' statement: the part that says $this->getState will either get the query using the storeId hash or create a new query and store it in the hash for later in this page load. The query itself selects all fields from table 'a' and a count of the number of walk visits for each walk returned. ToDo: add a where clause to count only published walk visits.
 
-// The 'select' statement: the part that says $this->getState will either get the query using the storeId hash or create a new query and store it in the hash for later in this page load. The query itself selects all fields from table 'a' and a count of the number of walk visits for each walk returned. ToDo: add a where clause to count only published walk visits.
+	The 'from' statement: this simply says which table to use. The #__ part gets replaced by the table prefix, which varies from site to site.
 
-// The 'from' statement: this simply says which table to use. The #__ part gets replaced by the table prefix, which varies from site to site.
+	The 'where' clauses use any filters set. They are complicated because they may be integers or strings or null.
 
-// The 'where' clauses use any filters set. They are complicated because they may be integers or strings or null.
+	The 'order' clause adds the ordering statements.
 
-// The 'order' clause adds the ordering statements.
+	The query is then returned to the caller where page limit statements are added.
 
-// The query is then returned to the caller where page limit statements are added.
-
-// If there is an error in your sql syntax you may just see a 500 Internal Error message. If so, before the return statement you can insert echo $query->__tostring();die(); to see what your query contains at that stage.
-
+	If there is an error in your sql syntax you may just see a 500 Internal Error message. If so, before the return statement you can insert echo $query->__tostring();die(); to see what your query contains at that stage.
+*/
 
 	protected function getListQuery()
 	{
@@ -147,18 +147,18 @@ class BaseItemListModel extends ListModel
 		);
 		$query->from('#__base AS a');
 
-		// // Filter by published state
-		// $published = (string) $this->getState('filter.published');
+		// Filter by published state
+		$published = (string) $this->getState('filter.published');
 
-		// if (is_numeric($published))
-		// {
-		// 	$query->where($db->quoteName('a.state') . ' = :published');
-		// 	$query->bind(':published', $published, ParameterType::INTEGER);
-		// }
-		// elseif ($published === '')
-		// {
-		// 	$query->where('(' . $db->quoteName('a.state') . ' = 0 OR ' . $db->quoteName('a.state') . ' = 1)');
-		// }
+		if (is_numeric($published))
+		{
+			$query->where($db->quoteName('a.state') . ' = :published');
+			$query->bind(':published', $published, ParameterType::INTEGER);
+		}
+		elseif ($published === '')
+		{
+			$query->where('(' . $db->quoteName('a.state') . ' = 0 OR ' . $db->quoteName('a.state') . ' = 1)');
+		}
 
 		// Filter by search in title.
 		$search = $this->getState('filter.search');
@@ -194,4 +194,5 @@ class BaseItemListModel extends ListModel
 
 		return $items;
 	}
+
 }

@@ -9,6 +9,7 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Button\PublishedButton;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
@@ -44,6 +45,9 @@ $editIcon = '<span class="fa fa-pen-square me-2" aria-hidden="true"></span>';
 								<td style="width:1%" class="text-center">
 									<?php echo HTMLHelper::_('grid.checkall'); ?>
 								</td>
+								<th scope="col" style="width:1%; min-width:85px" class="text-center">
+									<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
+								</th>
 								<th scope="col" style="width:20%">
 									<?php echo HTMLHelper::_('searchtools.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
 								</th>
@@ -72,6 +76,18 @@ $editIcon = '<span class="fa fa-pen-square me-2" aria-hidden="true"></span>';
 							<tr class="row<?php echo $i % 2; ?>">
 								<td class="text-center">
 									<?php echo HTMLHelper::_('grid.id', $i, $item->id); ?>
+								</td>
+								<td class="article-status">
+									<?php // echo $states[$item->state]; ?>
+									<?php
+										$options = [
+											'task_prefix' => 'baseitemlist.',
+											// 'disabled' => $workflow_state || !$canChange,
+											'id' => 'state-' . $item->id
+										];
+
+									echo (new PublishedButton)->render((int) $item->state, $i, $options/*, $item->publish_up, $item->publish_down*/);
+									?>
 								</td>
 								<td scope="row" class="has-context">
 									<!-- <a class="hasTooltip" href="<?php //echo Route::_('index.php?option=com_base&task=mywalk.edit&id=' . $item->id); ?>">
