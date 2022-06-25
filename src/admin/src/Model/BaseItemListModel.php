@@ -45,6 +45,10 @@ class BaseItemListModel extends ListModel
 			$config['filter_fields'] = array(
 				'id', 'a.id',
 				'title', 'a.title',
+				'description', 'a.description',
+				'field_1', 'a.field_1',
+				'field_2', 'a.field_2',
+				'field_3', 'a.field_3',
 				// 'state', 'a.state',
 			);
 		}

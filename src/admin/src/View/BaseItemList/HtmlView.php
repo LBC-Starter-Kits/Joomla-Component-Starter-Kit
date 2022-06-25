@@ -77,7 +77,7 @@ class HtmlView extends BaseHtmlView
 			throw new GenericDataException(implode("\n", $errors), 500);
 		}
 
-		// $this->addToolbar();
+		$this->addToolbar();
 
 		return parent::display($tpl);
 	}
@@ -96,12 +96,12 @@ class HtmlView extends BaseHtmlView
 
 		ToolbarHelper::title(Text::_('COM_BASE_BASEITEMLIST_PAGE_TITLE'), 'baseitem');
 
-		$canDo = ContentHelper::getActions('com_base');
+		$canDo = ContentHelper::getActions('com_basecomponent');
 
-		// if ($canDo->get('core.create'))
-		// {
-		// 	$toolbar->addNew('mywalk.add');
-		// }
+		if ($canDo->get('core.create'))
+		{
+			$toolbar->addNew('baseitem.add');
+		}
 
 	// 	if ($canDo->get('core.edit.state'))
 	// 	{
@@ -134,10 +134,10 @@ class HtmlView extends BaseHtmlView
 	// 			->listCheck(true);
 	// 	}
 
-	// 	if ($canDo->get('core.create'))
-	// 	{
-	// 		$toolbar->preferences('com_mywalks');
-	// 	}
+		if ($canDo->get('core.create'))
+		{
+			// $toolbar->preferences('com_basecomponent');
+		}
 
 	}
 }
