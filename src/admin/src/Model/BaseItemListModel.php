@@ -45,7 +45,7 @@ class BaseItemListModel extends ListModel
 			$config['filter_fields'] = array(
 				'id', 'a.id',
 				'title', 'a.title',
-				'state', 'a.state',
+				// 'state', 'a.state',
 			);
 		}
 
@@ -143,18 +143,18 @@ class BaseItemListModel extends ListModel
 		);
 		$query->from('#__base AS a');
 
-		// Filter by published state
-		$published = (string) $this->getState('filter.published');
+		// // Filter by published state
+		// $published = (string) $this->getState('filter.published');
 
-		if (is_numeric($published))
-		{
-			$query->where($db->quoteName('a.state') . ' = :published');
-			$query->bind(':published', $published, ParameterType::INTEGER);
-		}
-		elseif ($published === '')
-		{
-			$query->where('(' . $db->quoteName('a.state') . ' = 0 OR ' . $db->quoteName('a.state') . ' = 1)');
-		}
+		// if (is_numeric($published))
+		// {
+		// 	$query->where($db->quoteName('a.state') . ' = :published');
+		// 	$query->bind(':published', $published, ParameterType::INTEGER);
+		// }
+		// elseif ($published === '')
+		// {
+		// 	$query->where('(' . $db->quoteName('a.state') . ' = 0 OR ' . $db->quoteName('a.state') . ' = 1)');
+		// }
 
 		// Filter by search in title.
 		$search = $this->getState('filter.search');

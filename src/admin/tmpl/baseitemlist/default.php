@@ -28,7 +28,7 @@ $editIcon = '<span class="fa fa-pen-square me-2" aria-hidden="true"></span>';
 	<div class="row">
 		<div class="col-md-12">
 			<div id="j-main-container" class="j-main-container">
-				<?php echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
+				<?php // echo LayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
 				<?php if (empty($this->items)) : ?>
 					<div class="alert alert-info">
 						<span class="fa fa-info-circle" aria-hidden="true"></span><span class="sr-only"><?php echo Text::_('INFO'); ?></span>
@@ -44,9 +44,6 @@ $editIcon = '<span class="fa fa-pen-square me-2" aria-hidden="true"></span>';
 								<td style="width:1%" class="text-center">
 									<?php echo HTMLHelper::_('grid.checkall'); ?>
 								</td>
-								<th scope="col" style="width:1%; min-width:85px" class="text-center">
-									<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
-								</th>
 								<th scope="col" style="width:20%">
 									<?php echo HTMLHelper::_('searchtools.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
 								</th>
@@ -76,14 +73,12 @@ $editIcon = '<span class="fa fa-pen-square me-2" aria-hidden="true"></span>';
 								<td class="text-center">
 									<?php echo HTMLHelper::_('grid.id', $i, $item->id); ?>
 								</td>
-								<td class="class="article-status"">
-									<?php echo $states[$item->state]; ?>
-								</td>
-								<th scope="row" class="has-context">
+								<td scope="row" class="has-context">
 									<!-- <a class="hasTooltip" href="<?php //echo Route::_('index.php?option=com_base&task=mywalk.edit&id=' . $item->id); ?>">
-										<?php //echo $editIcon; ?><?php echo $this->escape($item->title); ?>
+										<?php //echo $editIcon; ?><?php //echo $this->escape($item->title); ?>
 									</a> -->
-								</th>
+									<?php echo $this->escape($item->title); ?>
+								</td>
 								<td class="">
 									<?php echo $item->description; ?>
 								</td>
