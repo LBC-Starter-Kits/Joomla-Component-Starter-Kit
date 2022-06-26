@@ -78,7 +78,6 @@ $editIcon = '<span class="fa fa-pen-square me-2" aria-hidden="true"></span>';
 									<?php echo HTMLHelper::_('grid.id', $i, $item->id); ?>
 								</td>
 								<td class="article-status">
-									<?php // echo $states[$item->state]; ?>
 									<?php
 										$options = [
 											'task_prefix' => 'baseitemlist.',
@@ -90,10 +89,9 @@ $editIcon = '<span class="fa fa-pen-square me-2" aria-hidden="true"></span>';
 									?>
 								</td>
 								<td scope="row" class="has-context">
-									<!-- <a class="hasTooltip" href="<?php //echo Route::_('index.php?option=com_base&task=mywalk.edit&id=' . $item->id); ?>">
-										<?php //echo $editIcon; ?><?php //echo $this->escape($item->title); ?>
-									</a> -->
-									<?php echo $this->escape($item->title); ?>
+									<a class="hasTooltip" href="<?php echo Route::_('index.php?option=com_basecomponent&task=baseitem.edit&id=' . $item->id); ?>">
+										<?php echo $editIcon; ?><?php echo $this->escape($item->title); ?>
+									</a>
 								</td>
 								<td class="">
 									<?php echo $item->description; ?>

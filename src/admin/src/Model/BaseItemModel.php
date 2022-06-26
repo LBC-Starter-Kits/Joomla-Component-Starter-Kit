@@ -4,11 +4,14 @@ namespace LBC\Component\BaseComponent\Administrator\Model;
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\Model\AdminModel;
 
 class BaseItemModel extends AdminModel{
 
+
+	protected $_context = 'com_basecomponent.baseitem';
 
     /**
 	 * Method to get a table object, load it if necessary.
@@ -37,9 +40,44 @@ class BaseItemModel extends AdminModel{
 
 
     public function getForm($data = array(), $loadData = true){
+		// Get the form.
+		$form = $this->loadForm('com_basecomponent.baseitem', 'baseitem', array('control' => 'jform', 'load_data' => $loadData));
 
+		if (empty($form))
+		{
+			return false;
+		}
+
+		return $form;
     }
     
+
+	/**
+	 * Method to get the data that should be injected in the form.
+	 *
+	 * @return  mixed  The data for the form.
+	 *
+	 * @since   1.6
+	 */
+	protected function loadFormData()
+	{
+		// Check the session for previously entered form data.
+		$app = Factory::getApplication();
+		$data = $app->getUserState('com_basecomponent.edit.baseitem.data', array());
+
+		if (empty($data))
+		{
+			$data = $this->getItem();
+
+			// Pre-select some filters (Status, Category, Language, Access) in edit form if those have been selected in Article Manager: Articles
+		}
+
+		$this->preprocessData('com_basecomponent.baseitem', $data);
+
+		return $data;
+	}
+
+
 	/**
 	 * Method to change the published state of one or more records.
 	 *
