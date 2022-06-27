@@ -36,14 +36,14 @@
 			<option value="a.published DESC">JSTATUS_DESC</option>
 			<option value="a.title ASC">JGLOBAL_TITLE_ASC</option>
 			<option value="a.title DESC">JGLOBAL_TITLE_DESC</option>
-			<option value="a.description ASC">COM_BASE_BASEITEMLIST_ORDER_DESCRIPTION_ASC</option>
-			<option value="a.description DESC">COM_BASE_BASEITEMLIST_ORDER_DESCRIPTION_DESC</option>
-			<option value="a.field_1 ASC">COM_BASE_BASEITEMLIST_ORDER_FIELD_1_ASC</option>
-			<option value="a.field_1 DESC">COM_BASE_BASEITEMLIST_ORDER_FIELD_1_DESC</option>
-			<option value="a.field_2 ASC">COM_BASE_BASEITEMLIST_ORDER_FIELD_2_ASC</option>
-			<option value="a.field_2 DESC">COM_BASE_BASEITEMLIST_ORDER_FIELD_2_DESC</option>
-			<option value="a.field_3 ASC">COM_BASE_BASEITEMLIST_ORDER_FIELD_3_ASC</option>
-			<option value="a.field_3 DESC">COM_BASE_BASEITEMLIST_ORDER_FIELD_3_DESC</option>
+			<option value="a.description ASC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_DESCRIPTION_ASC</option>
+			<option value="a.description DESC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_DESCRIPTION_DESC</option>
+			<option value="a.field_1 ASC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_FIELD_1_ASC</option>
+			<option value="a.field_1 DESC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_FIELD_1_DESC</option>
+			<option value="a.field_2 ASC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_FIELD_2_ASC</option>
+			<option value="a.field_2 DESC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_FIELD_2_DESC</option>
+			<option value="a.field_3 ASC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_FIELD_3_ASC</option>
+			<option value="a.field_3 DESC">COM_BASECOMPONENT_BASEITEMLIST_ORDER_FIELD_3_DESC</option>
 			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
 			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
 		</field>
