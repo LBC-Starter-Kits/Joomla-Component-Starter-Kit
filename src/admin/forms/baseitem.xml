@@ -30,11 +30,11 @@
 
 
 		<field
-			name="published"
+			name="state"
 			type="list"
 			label="JSTATUS"
 			default="1"
-			id="published"
+			id="state"
 			class="custom-select-color-state"
 			size="1"
 			>
