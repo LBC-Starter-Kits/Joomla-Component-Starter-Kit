@@ -11,6 +11,9 @@ namespace LBC\Component\BaseComponent\Administrator\Controller;
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\Controller\FormController;
 
 /**
@@ -20,4 +23,5 @@ use Joomla\CMS\MVC\Controller\FormController;
  */
 class BaseitemController extends FormController
 {
+    protected $view_list="baseitemlist";
 }
