@@ -111,7 +111,26 @@ class HtmlView extends BaseHtmlView
 			{
 				$toolbar->apply('baseitem.apply');
 			}
+
+			$saveGroup = $toolbar->dropdownButton('save-group');
+
+			$saveGroup->configure(
+				function (Toolbar $childBar) /*use ($user)*/
+				{
+					$childBar->save('baseitem.save');
+
+					// if ($user->authorise('core.create', 'com_menus.menu'))
+					// {
+					// 	$childBar->save('baseitem.save2menu', 'JTOOLBAR_SAVE_TO_MENU');
+					// }
+
+					$childBar->save2new('baseitem.save2new');
+					$childBar->save2copy('baseitem.save2copy');
+				}
+			);
+
 		}
-		$toolbar->cancel('baseitem.cancel', 'JTOOLBAR_CLOSE');
+		
+		$toolbar->cancel('baseitem.cancel', 'JTOOLBAR_CLOSE');		
 	}
 }

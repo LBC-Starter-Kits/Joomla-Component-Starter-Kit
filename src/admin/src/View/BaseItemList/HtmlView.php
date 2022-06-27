@@ -103,36 +103,36 @@ class HtmlView extends BaseHtmlView
 			$toolbar->addNew('baseitem.add');
 		}
 
-	// 	if ($canDo->get('core.edit.state'))
-	// 	{
-	// 		$dropdown = $toolbar->dropdownButton('status-group')
-	// 			->text('JTOOLBAR_CHANGE_STATUS')
-	// 			->toggleSplit(false)
-	// 			->icon('icon-ellipsis-h')
-	// 			->buttonClass('btn btn-action')
-	// 			->listCheck(true);
+		if ($canDo->get('core.edit.state'))
+		{
+			$dropdown = $toolbar->dropdownButton('status-group')
+				->text('JTOOLBAR_CHANGE_STATUS')
+				->toggleSplit(false)
+				->icon('icon-ellipsis-h')
+				->buttonClass('btn btn-action')
+				->listCheck(true);
 
-	// 		$childBar = $dropdown->getChildToolbar();
+			$childBar = $dropdown->getChildToolbar();
 
-	// 		$childBar->publish('mywalks.publish')->listCheck(true);
+			$childBar->publish('baseitemlist.publish')->listCheck(true);
 
-	// 		$childBar->unpublish('mywalks.unpublish')->listCheck(true);
+			$childBar->unpublish('baseitemlist.unpublish')->listCheck(true);
 
-	// 		$childBar->archive('mywalks.archive')->listCheck(true);
+			$childBar->archive('baseitemlist.archive')->listCheck(true);
 
-	// 		if ($this->state->get('filter.published') != -2)
-	// 		{
-	// 			$childBar->trash('mywalks.trash')->listCheck(true);
-	// 		}
-	// 	}
+			if ($this->state->get('filter.published') != -2)
+			{
+				$childBar->trash('baseitemlist.trash')->listCheck(true);
+			}
+		}
 
-	// 	if ($this->state->get('filter.published') == -2 && $canDo->get('core.delete'))
-	// 	{
-	// 		$toolbar->delete('mywalks.delete')
-	// 			->text('JTOOLBAR_EMPTY_TRASH')
-	// 			->message('JGLOBAL_CONFIRM_DELETE')
-	// 			->listCheck(true);
-	// 	}
+		if ($this->state->get('filter.published') == -2 && $canDo->get('core.delete'))
+		{
+			$toolbar->delete('baseitemlist.delete')
+				->text('JTOOLBAR_EMPTY_TRASH')
+				->message('JGLOBAL_CONFIRM_DELETE')
+				->listCheck(true);
+		}
 
 		if ($canDo->get('core.create'))
 		{
