@@ -11,6 +11,11 @@ CREATE TABLE IF NOT EXISTS `#__base` (
     `field_2`       int(11)         NOT NULL DEFAULT '0',
     `field_3`       varchar(512)    ,
     `state`         TINYINT         NOT NULL DEFAULT '1',
+    `publish_up`    datetime        ,
+    `publish_down`  datetime        ,
+    `modified`      datetime        ,
+    `modified_by`   int(11)         NOT NULL DEFAULT '0',
+    `ordering`      int(11)         NOT NULL DEFAULT '0' 
     PRIMARY KEY (`id`)
 
 ) ENGINE InnoDB DEFAULT COLLATE utf8mb4_unicode_ci;
