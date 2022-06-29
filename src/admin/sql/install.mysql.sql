@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `#__base` (
     `publish_down`  datetime        ,
     `modified`      datetime        ,
     `modified_by`   int(11)         NOT NULL DEFAULT '0',
-    `ordering`      int(11)         NOT NULL DEFAULT '0' 
+    `ordering`      int(11)         NOT NULL DEFAULT '0', 
     PRIMARY KEY (`id`)
 
 ) ENGINE InnoDB DEFAULT COLLATE utf8mb4_unicode_ci;

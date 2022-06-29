@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__mymodel`;
+DROP TABLE IF EXISTS `#__base`;
