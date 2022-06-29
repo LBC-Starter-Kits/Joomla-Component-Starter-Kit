@@ -50,6 +50,7 @@ class BaseItemListModel extends ListModel
 				'field_2', 'a.field_2',
 				'field_3', 'a.field_3',
 				'state', 'a.state',
+				'ordering', 'a.ordering',
 			);
 		}
 
@@ -68,7 +69,7 @@ class BaseItemListModel extends ListModel
 	 *
 	 * @since   1.6
 	 */
-	protected function populateState($ordering = 'a.id', $direction = 'asc')
+	protected function populateState($ordering = 'a.ordering', $direction = 'asc')
 	{
         // When a page is first loaded no filters are set. When a filter is set the next page load has the new filter setting in the form submission. We need to save that setting as state variable for use when filtering is actually used in the getQuery function. Notice the default values for ordering and direction if none are passed to this function.
 
@@ -170,7 +171,7 @@ class BaseItemListModel extends ListModel
 		}
 
 		// Add the list ordering clause.
-		$orderCol  = $this->state->get('list.ordering', 'a.id');
+		$orderCol  = $this->state->get('list.ordering', 'a.ordering');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 
 		$query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));
