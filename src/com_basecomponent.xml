@@ -10,7 +10,7 @@
 	<version>0.0.1</version>
 
 	<!-- The description is optional and defaults to the name -->
-	<description>COM_BASE_XML_DESCRIPTION</description>
+	<description>COM_BASECOMPONENT_XML_DESCRIPTION</description>
 
     <!-- 
         The first item should be the Company name. The namespace is used in the extension to distinguish its code from code in other extensions that may have identical class names. The namespace is used to register a service provider.
