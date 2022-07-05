@@ -32,10 +32,10 @@ abstract class RouteHelper
 	 *
 	 * @since   1.5
 	 */
-	public static function getWalkRoute($id, $slug, $language = 0, $layout = null)
+	public static function getBaseItemRoute($id, $slug, $language = 0, $layout = null)
 	{
 		// Create the link
-		$link = 'index.php?option=com_mywalks&view=mywalk&id=' . $id . '&slug=' . $slug;
+		$link = 'index.php?option=com_basecomponent&view=baseitem&id=' . $id . '&slug=' . $slug;
 
 		if ($language && $language !== '*' && Multilanguage::isEnabled())
 		{
@@ -50,32 +50,32 @@ abstract class RouteHelper
 		return $link;
 	}
 
-	/**
-	 * Get the category route.
-	 *
-	 * @param   integer  $catid     The category ID.
-	 * @param   integer  $language  The language code.
-	 * @param   string   $layout    The layout value.
-	 *
-	 * @return  string  The article route.
-	 *
-	 * @since   1.5
-	 */
-	public static function getWalksRoute($language = 0, $layout = null)
-	{
+	// /**
+	//  * Get the category route.
+	//  *
+	//  * @param   integer  $catid     The category ID.
+	//  * @param   integer  $language  The language code.
+	//  * @param   string   $layout    The layout value.
+	//  *
+	//  * @return  string  The article route.
+	//  *
+	//  * @since   1.5
+	//  */
+	// public static function getWalksRoute($language = 0, $layout = null)
+	// {
 
-		$link = 'index.php?option=com_content&view=mywalks';
+	// 	$link = 'index.php?option=com_content&view=mywalks';
 
-		if ($language && $language !== '*' && Multilanguage::isEnabled())
-		{
-			$link .= '&lang=' . $language;
-		}
+	// 	if ($language && $language !== '*' && Multilanguage::isEnabled())
+	// 	{
+	// 		$link .= '&lang=' . $language;
+	// 	}
 
-		if ($layout)
-		{
-			$link .= '&layout=' . $layout;
-		}
+	// 	if ($layout)
+	// 	{
+	// 		$link .= '&layout=' . $layout;
+	// 	}
 
-		return $link;
-	}
+	// 	return $link;
+	// }
 }

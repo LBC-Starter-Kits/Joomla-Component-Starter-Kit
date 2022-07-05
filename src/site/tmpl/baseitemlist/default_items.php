@@ -33,7 +33,7 @@ use LBC\Component\BaseComponent\Site\Helper\RouteHelper as BaseItemListHelperRou
         $slug = strtolower(str_replace(' ', '-', $slug));
     ?>
     <tr>
-        <td><a href="<?php $item->id;//echo Route::_(BaseItemListHelperRoute::getItemRoute($item->id, $slug)); ?>">
+        <td><a href="<?php /*$item->id;*/ echo Route::_(BaseItemListHelperRoute::getBaseItemRoute($item->id, $slug)); ?>">
         <?php echo $item->title; ?></a></td>
         <td><?php echo $item->description; ?></td>
         <td><?php //echo $item->distance; ?></td>
