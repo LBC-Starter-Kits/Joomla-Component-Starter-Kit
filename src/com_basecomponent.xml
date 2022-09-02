@@ -22,12 +22,11 @@
 	<namespace path="src">LBC\Component\BaseComponent</namespace>
 
 	<!-- Runs on install -->
-	<!-- Bug: El script no se ejecuta en la instalación, ejecutar manualmente-->
-	<!-- <install> 
+	<install> 
 		<sql>
 			<file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
 		</sql>
-	</install> -->
+	</install>
 	<uninstall> <!-- Runs on uninstall -->
 		<sql>
 			<file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>

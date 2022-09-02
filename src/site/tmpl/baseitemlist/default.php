@@ -16,7 +16,7 @@ use Joomla\CMS\Language\Text;
 HTMLHelper::_('behavior.core');
 
 ?>
-<h1><?php echo Text::_('COM_MYWALKS_LIST_PAGE_HEADING'); ?></h1>
+<h1><?php echo Text::_('COM_BASECOMPONENT_BASEITEMLIST_PAGE_HEADING'); ?></h1>
 <div class="com-contact-categories categories-list">
     <?php
         echo $this->loadTemplate('items');

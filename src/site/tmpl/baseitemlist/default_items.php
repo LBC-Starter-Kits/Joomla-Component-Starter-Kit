@@ -17,14 +17,24 @@ use LBC\Component\BaseComponent\Site\Helper\RouteHelper as BaseItemListHelperRou
 ?>
 <div class="table-responsive">
   <table class="table table-striped">
-  <caption><?php echo Text::_('COM_MYWALKS_LIST_TABLE_CAPTION'); ?></caption>
+  <caption><?php echo Text::_('COM_BASECOMPONENT_BASEITEMLIST_TABLE_CAPTION'); ?></caption>
   <thead>
     <tr>
-        <th scope="col"><?php echo Text::_('COM_MYWALKS_LIST_TITLE'); ?></th>
-        <th scope="col"><?php echo Text::_('COM_MYWALKS_LIST_DESCRIPTION'); ?></th>
-        <th scope="col"><?php echo Text::_('COM_MYWALKS_LIST_DISTANCE'); ?></th>
-        <th scope="col"><?php echo Text::_('COM_MYWALKS_LIST_LAST_VISIT'); ?></th>
-        <th scope="col"><?php echo Text::_('COM_MYWALKS_LIST_NVISITS'); ?></th>
+      <th scope="col" style="min-width:6rem;">
+        <?php echo Text::_('COM_BASECOMPONENT_BASEITEMLIST_LABEL_TITLE'); ?>
+      </th>
+      <th scope="col" style="min-width:10rem;">
+        <?php echo Text::_('COM_BASECOMPONENT_BASEITEMLIST_LABEL_DESCRIPTION'); ?>
+      </th>
+      <th scope="col" style="min-width:6rem;">
+        <?php echo Text::_('COM_BASECOMPONENT_BASEITEMLIST_LABEL_FIELD1'); ?>
+      </th>
+      <th scope="col" style="min-width:6rem;">
+        <?php echo Text::_('COM_BASECOMPONENT_BASEITEMLIST_LABEL_FIELD2'); ?>
+      </th>
+      <th scope="col" style="min-width:6rem;">
+        <?php echo Text::_('COM_BASECOMPONENT_BASEITEMLIST_LABEL_FIELD3'); ?>
+      </th>
     </tr>
     </thead>
     <tbody>
@@ -36,9 +46,9 @@ use LBC\Component\BaseComponent\Site\Helper\RouteHelper as BaseItemListHelperRou
         <td><a href="<?php /*$item->id;*/ echo Route::_(BaseItemListHelperRoute::getBaseItemRoute($item->id, $slug)); ?>">
         <?php echo $item->title; ?></a></td>
         <td><?php echo $item->description; ?></td>
-        <td><?php //echo $item->distance; ?></td>
-        <td><?php //echo $item->last_visit //$item->lastvisit; ?></td>
-        <td><?php //echo $item->nvisits; ?></td>
+        <td><?php echo $item->field_1; ?></td>
+        <td><?php echo $item->field_2; ?></td>
+        <td><?php echo $item->field_3; ?></td>
     </tr>
     <?php endforeach; ?><?php //endif; ?>
     </tbody>
