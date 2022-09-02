@@ -64,6 +64,21 @@
             <language tag="es-ES">language/es-ES/com_basecomponent.ini</language>
 			<language tag="es-ES">language/es-ES/com_basecomponent.sys.ini</language>
 		</languages>
-		<menu img="class:default" link="option=com_basecomponent">LBC Base Component</menu>
+		
+		<menu img="class:default">COM_BASECOMPONENT_NAME</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu 
+				link="option=com_basecomponent" 
+				img="class:default"
+				alt="BaseComponent/BaseItems">COM_BASECOMPONENT_BASEITEMLIST_VIEW_DEFAULT_TITLE</menu>
+
+			<!-- <menu 
+				link="option=com_categories&amp;extension=com_contact"
+				view="categories" img="class:contact-cat" alt="Contacts/Categories">COM_CONTACT_CATEGORIES</menu> -->
+		</submenu>
 	</administration>
 </extension>
