@@ -1,0 +1,15 @@
+{
+    "name": "lbc/joomla-component-base",
+    "authors": [
+        {
+            "name": "Luis BC",
+            "email": "luinux81@gmail.com"
+        }
+    ],
+    "require": {
+        "lbcdev/joomla-helper": "dev-main"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.1"
+    }
+}
